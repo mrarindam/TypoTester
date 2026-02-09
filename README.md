@@ -1,28 +1,90 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# React + Vite
+# TypoTester 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TypoTester** is a modern **WEB3-based typing speed test application** where users can measure their real typing speed (WPM), accuracy, and securely save scores on-chain-linked identity using a wallet.
 
-Currently, two official plugins are available:
+Built with performance, fairness, and anti-cheat logic in mind.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🔥 Key Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### ⌨️ Typing Test
+- Time-based typing tests: **15s / 30s / 60s / 120s**
+- Real-time word highlighting
+- Correct & wrong word detection
+- Live WPM and accuracy calculation
+- Typing sound feedback for better user experience
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+### 🧮 Accurate WPM Logic
+- **WPM is calculated using correct characters only**
+- Formula used:
+WPM = (Correct Characters / 5) / Minutes
+- Prevents fake inflation by random typing or space spamming
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# TypoTester
-This Is A WEB3 Typing Speed Test Website You Can Check &amp; Save Your Real WPM Build on BASE Network
->>>>>>> b23f9d9e07dcaaf194aac373da00481489475f88
-=======
-# TypoTester
-This Is A WEB3 Typing Speed Test Website You Can Check &amp; Save Your Real WPM Build on BASE Network
->>>>>>> 89de1049a32d081734f33325ffea722abc8b6362
+---
+
+### 🛡️ Anti-Cheat System
+To ensure fair scores, multiple cheat-prevention rules are applied:
+
+- ❌ **Empty space spam blocked**
+- ❌ **Wrong words do NOT increase WPM**
+- ❌ **Leaderboard disabled for tests below 30 seconds**
+- ❌ **Accuracy must be at least 60%**
+- ❌ **User must complete at least 80% of the test duration**
+- ❌ **Only the best score per wallet is saved**
+- ❌ **Short-duration score boosting prevented**
+
+These checks ensure that leaderboard rankings reflect **real typing skill**, not abuse.
+
+---
+
+### 🏆 Leaderboard
+- Global leaderboard sorted by **highest WPM**
+- Wallet-based identity (no username manipulation)
+- Rank-based UI styling:
+- 🥇 Rank 1
+- 🥈 Rank 2
+- 🥉 Rank 3
+- Others styled separately
+- Automatically updates after new valid scores
+
+---
+
+### 🔗 Wallet Integration (WEB3)
+- Connect wallet using **Base Network**
+- Wallet address is used as a unique identity
+- Entry fee logic supported (can be modified)
+- Prevents duplicate or fake user identities
+
+---
+
+### 🗄️ Database
+- **Supabase** is used as the backend database
+- Stores:
+- Wallet address
+- Best WPM
+- Accuracy
+- Timestamp
+- Secure upsert logic ensures:
+- Only better scores replace old ones
+
+---
+
+### 🎧 Sound Effects
+- Typing sound plays on valid character input
+- Sound does NOT play for:
+- Space spam
+- Invalid input
+- Enhances user feedback without distraction
+
+---
+
+### 📱 Device Support
+- Designed primarily for **desktop users**
+- Mobile users are gracefully restricted or can be redirected
+- Prevents unfair leaderboard entries from mobile keyboards
+
+---
+
